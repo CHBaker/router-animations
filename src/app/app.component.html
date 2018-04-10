@@ -1,6 +1,23 @@
+<header>
+    <div class="title">
+        Trans\tions
+    </div>
+</header>
 <nav class="nav">
-  <a routerLink="/home" routerLinkActive='active'>Home</a>
-  <a routerLink="/work" routerLinkActive='active'>Work</a>
+    <div class="container">
+        <div class="row">
+            <div routerLink="/home" routerLinkActive='active' class="col-2 pill">
+                <a>Home</a>
+                <div class="back-home"></div>
+                <div class="flow-home"></div>
+            </div>
+            <div routerLink="/work" routerLinkActive='active' class="col-2 pill">
+                <a>Work</a>
+                <div class="flow-work"></div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
 </nav>
 <main [@routerTransition]="getState(o)">
   <router-outlet #o="outlet"></router-outlet>

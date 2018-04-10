@@ -1,0 +1,71 @@
+header {
+    background: #dedede;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+}
+
+nav {
+    background: #dedede;
+    height: 79px;
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+    outline: none;
+}
+
+/* a {
+    position: absolute;
+    left: 34%;
+    top: 2px;
+    z-index: 3;
+} */
+
+.pill {
+    margin-top: 18px;
+    margin-right: 20px;
+    font-size: 18px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+}
+
+.active {
+    outline: none;
+}
+
+@keyframes flow-right {
+    0% {
+        width: 32px
+    }
+    100% {
+        width: 150%;
+    }
+}
+
+.back-home {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: grey;
+}
+.flow-home {
+    animation: flow-right .8s ease forwards;
+    position: absolute;
+    z-index: 2;
+    left: -33px;
+    top: 0;
+    border-radius: 50px;
+    width: 32px;
+    height: 33px;
+    background: white;
+}
