@@ -2,6 +2,6 @@
   <a routerLink="/home" routerLinkActive='active'>Home</a>
   <a routerLink="/work" routerLinkActive='active'>Work</a>
 </nav>
-<main>
-  <router-outlet></router-outlet>
+<main [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
 </main>
