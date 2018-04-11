@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
     @ViewChild('work') work: ElementRef;
     @ViewChild('bar1') bar1: ElementRef;
     @ViewChild('bar2') bar2: ElementRef;
+    @ViewChild('house') house: ElementRef;
+
     routerSub: Subscription;
     startingStylesApplied = true;
 
@@ -27,10 +29,14 @@ export class AppComponent implements OnInit {
                     console.log(e.url.split('/'));
                     this.renderer.addClass(this.bar1.nativeElement, 'starting-home-1');
                     this.renderer.addClass(this.bar2.nativeElement, 'starting-home-2');
+
+                    this.renderer.addClass(this.house.nativeElement, 'house-home-state');
                 } else {
                     console.log(e.url.split('/'));
                     this.renderer.addClass(this.bar1.nativeElement, 'starting-work-1');
                     this.renderer.addClass(this.bar2.nativeElement, 'starting-work-2');
+
+                    this.renderer.addClass(this.house.nativeElement, 'house-work-state');
                 }
             }
         });
@@ -41,13 +47,8 @@ export class AppComponent implements OnInit {
         return outlet.activatedRouteData.state;
     }
 
-    // animate pills and bars
+    // animate pills and bars and house
     flowToWork() {
-        if (this.startingStylesApplied) {
-            this.renderer.removeClass(this.bar1.nativeElement, 'starting-work-1');
-            this.renderer.removeClass(this.bar2.nativeElement, 'starting-work-2');
-        }
-
         this.renderer.addClass(this.work.nativeElement, 'flow-work');
         this.renderer.addClass(this.home.nativeElement, 'flow-out-home');
 
@@ -55,14 +56,12 @@ export class AppComponent implements OnInit {
         this.renderer.removeClass(this.bar2.nativeElement, 'animate-home-2');
         this.renderer.addClass(this.bar1.nativeElement, 'animate-work-1');
         this.renderer.addClass(this.bar2.nativeElement, 'animate-work-2');
+
+        this.renderer.addClass(this.house.nativeElement, 'move-house-out');
+        this.renderer.removeClass(this.house.nativeElement, 'move-house-in');
     }
 
     flowToHome() {
-        if (this.startingStylesApplied) {
-            this.renderer.removeClass(this.bar1.nativeElement, 'starting-home-1');
-            this.renderer.removeClass(this.bar2.nativeElement, 'starting-home-2');
-        }
-
         this.renderer.addClass(this.home.nativeElement, 'flow-home');
         this.renderer.addClass(this.work.nativeElement, 'flow-out-work');
 
@@ -70,5 +69,8 @@ export class AppComponent implements OnInit {
         this.renderer.removeClass(this.bar2.nativeElement, 'animate-work-2');
         this.renderer.addClass(this.bar1.nativeElement, 'animate-home-1');
         this.renderer.addClass(this.bar2.nativeElement, 'animate-home-2');
+
+        this.renderer.addClass(this.house.nativeElement, 'move-house-in');
+        this.renderer.removeClass(this.house.nativeElement, 'move-house-out');
     }
 }

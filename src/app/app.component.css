@@ -105,7 +105,7 @@ nav {
 }
 
 .active-work > .flow-work {
-    animation: flow-in-work 0.8s ease-out 0.2s forwards;
+    animation: flow-in-work 0.7s ease-out 0.2s forwards;
     position: absolute;
     z-index: 2;
     left: -33px;
@@ -271,7 +271,6 @@ nav {
     width: 45%;
     -webkit-transform: rotateX(45deg);
     transform: rotate(30deg);
-
 }
 
 .starting-work-2 {
@@ -281,4 +280,162 @@ nav {
     width: 48%;
     -webkit-transform: rotateX(45deg);
     transform: rotate(30deg);
+}
+.house {
+    position: absolute;
+    right: 10%;
+    bottom: 175px;
+    width: 250px;
+    height: 200px;
+    background: #ffd9fa;
+}
+
+.roof {
+    position: absolute;
+    top: -90px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-left: 121px solid transparent;
+    border-right: 130px solid transparent;
+    border-bottom: 90px solid #454751;
+}
+
+.window-1 {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    border: 6px solid #454751;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+
+.window-2 {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    border: 6px solid #454751;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+
+.line {
+    position: absolute;
+    top: 16px;
+    width: 40px;
+    height: 6px;
+    background: #454751;
+}
+
+.door {
+    position: absolute;
+    bottom: 0px;
+    left: 102px;
+    height: 70px;
+    width: 46px;
+    background: #73956e;
+    border: 5px solid #454751;
+    border-radius: 2px;
+}
+
+.door-knob {
+    position: absolute;
+    bottom: 27px;
+    left: 5px;
+    border-radius: 100%;
+    background: black;
+    width: 7px;
+    height: 7px;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    left: -250px;
+    height: 200px;
+    border-bottom: 200px solid #454751;
+    border-left: 25px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 73px;
+}
+
+.tree-top {
+    position: absolute;
+    top: -51px;
+    left: -8px;
+    width: 100px;
+    height: 100px;
+    background: #73956e;
+    border-radius: 100%;
+}
+
+.tree-top::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -28px;
+    width: 100px;
+    height: 100px;
+    background: #73956e;
+    border-radius: 100%;
+}
+
+.tree-top::before {
+    content: '';
+    position: absolute;
+    top: 2pxpx;
+    left: -60px;
+    width: 100px;
+    height: 100px;
+    background: #73956e;
+    border-radius: 100%;
+}
+
+@keyframes move-house-out {
+    0% {
+        transform: rotate(0deg);
+        right: 10%;
+        bottom: 175px;
+    }
+    100% {
+        transform: rotate(30deg);
+        bottom: 550px;
+        right: -45%;
+    }
+}
+
+@keyframes move-house-in {
+    0% {
+        transform: rotate(30deg);
+        bottom: 550px;
+        right: -45%;
+    }
+    100% {
+        transform: rotate(0deg);
+        right: 10%;
+        bottom: 175px;
+    }
+}
+
+.move-house-out {
+    animation: move-house-out 0.95s ease forwards;
+}
+
+.move-house-in {
+    animation: move-house-in 0.65s ease forwards;
+}
+
+.house-home-state {
+    transform: rotate(0deg);
+    right: 10%;
+    bottom: 175px;
+}
+
+.house-work-state {
+    transform: rotate(30deg);
+    bottom: 550px;
+    right: -45%;
 }
