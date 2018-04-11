@@ -6,14 +6,25 @@
 <nav class="nav">
     <div class="container">
         <div class="row">
-            <div routerLink="/home" routerLinkActive='active' class="col-2 pill">
-                <a>Home</a>
-                <div class="back-home"></div>
-                <div class="flow-home"></div>
+            <div
+                routerLink="/home"
+                routerLinkActive='active-home'
+                class="col-2 pill"
+                (click)="flowToHome()"
+            >
+                <span class="menu-item">Home</span>
+                <div class="pill-back"></div>
+                <div class="flow-home" #home></div>
             </div>
-            <div routerLink="/work" routerLinkActive='active' class="col-2 pill">
-                <a>Work</a>
-                <div class="flow-work"></div>
+            <div
+                routerLink="/work"
+                routerLinkActive='active-work'
+                (click)="flowToWork()"
+                class="col-2 pill"
+            >
+                <span class="menu-item">Work</span>
+                <div class="pill-back"></div>
+                <div class="flow-work" #work></div>
             </div>
             <div class="col"></div>
         </div>

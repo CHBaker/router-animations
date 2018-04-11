@@ -10,18 +10,6 @@ nav {
     height: 79px;
 }
 
-a, a:hover, a:visited {
-    text-decoration: none;
-    outline: none;
-}
-
-/* a {
-    position: absolute;
-    left: 34%;
-    top: 2px;
-    z-index: 3;
-} */
-
 .pill {
     margin-top: 18px;
     margin-right: 20px;
@@ -35,20 +23,12 @@ a, a:hover, a:visited {
     overflow: hidden;
 }
 
-.active {
-    outline: none;
+.menu-item {
+    position: relative;
+    z-index: 5;
 }
 
-@keyframes flow-right {
-    0% {
-        width: 32px
-    }
-    100% {
-        width: 150%;
-    }
-}
-
-.back-home {
+.pill-back {
     content: '';
     position: absolute;
     z-index: 1;
@@ -58,14 +38,99 @@ a, a:hover, a:visited {
     height: 200px;
     background: grey;
 }
-.flow-home {
-    animation: flow-right .8s ease forwards;
+
+@keyframes flow-in-home {
+    0% {
+        width: 32px;
+        left: 150%;
+    }
+    100% {
+        width: 150%;
+        left: -5px;
+    }
+}
+
+.active-home > .flow-home {
+    animation: flow-in-home 0.8s ease .2s forwards;
+    position: absolute;
+    z-index: 2;
+    left: 150%;
+    top: 0;
+    border-radius: 50px;
+    width: 32px;
+    height: 35px;
+    background: white;
+}
+
+@keyframes flow-out-home {
+    0% {
+        width: 150%;
+        left: -5px;
+    }
+    99% {
+        width: 150%;
+    }
+    100% {
+        left: 120%;
+        width: 32px;
+    }
+}
+
+.flow-out-home {
+    animation: flow-out-home 0.8s ease forwards;
+    position: absolute;
+    z-index: 2;
+    left: 150%;
+    top: 0;
+    border-radius: 50px;
+    width: 150%;
+    height: 35px;
+    background: white;
+
+}
+
+@keyframes flow-in-work {
+    0% {
+        width: 32px;
+        left: -33px;
+    }
+    100% {
+        width: 150%;
+        left: -5px;
+    }
+}
+
+.active-work > .flow-work {
+    animation: flow-in-work 0.8s ease .2s forwards;
     position: absolute;
     z-index: 2;
     left: -33px;
     top: 0;
     border-radius: 50px;
     width: 32px;
-    height: 33px;
+    height: 35px;
+    background: white;
+}
+
+@keyframes flow-out-work {
+    0% {
+        width: 150%;
+        left: -5px;
+    }
+    100% {
+        width: 32px;
+        left: -33px
+    }
+}
+
+.flow-out-work {
+    animation: flow-out-work 0.8s ease forwards;
+    position: absolute;
+    z-index: 2;
+    left: -5px;
+    top: 0;
+    border-radius: 50px;
+    width: 150%;
+    height: 35px;
     background: white;
 }
