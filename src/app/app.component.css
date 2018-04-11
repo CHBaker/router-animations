@@ -1,17 +1,23 @@
-header {
-    background: #dedede;
+.nav-container {
+    margin-left: 8%;
+}
+
+.title {
     height: 50px;
-    font-size: 35px;
+    line-height: 1;
+    color: #95D7AE;
+    font-size: 96px;
     text-align: center;
+
 }
 
 nav {
-    background: #dedede;
+    background: #454851;
     height: 79px;
 }
 
 .pill {
-    margin-top: 18px;
+    margin-top: 31px;
     margin-right: 20px;
     font-size: 18px;
     padding: 3px 10px;
@@ -36,7 +42,8 @@ nav {
     left: 0;
     width: 200px;
     height: 200px;
-    background: grey;
+    background: #95D7AE;
+
 }
 
 @keyframes flow-in-home {
@@ -59,7 +66,7 @@ nav {
     border-radius: 50px;
     width: 32px;
     height: 35px;
-    background: white;
+    background: #ffe6f9;
 }
 
 @keyframes flow-out-home {
@@ -85,7 +92,8 @@ nav {
     border-radius: 50px;
     width: 150%;
     height: 35px;
-    background: white;
+    background: #ffe6f9;
+
 
 }
 
@@ -101,7 +109,7 @@ nav {
 }
 
 .active-work > .flow-work {
-    animation: flow-in-work 0.8s ease .2s forwards;
+    animation: flow-in-work 1s ease-out .2s forwards;
     position: absolute;
     z-index: 2;
     left: -33px;
@@ -109,7 +117,8 @@ nav {
     border-radius: 50px;
     width: 32px;
     height: 35px;
-    background: white;
+    background: #ffe6f9;
+
 }
 
 @keyframes flow-out-work {
@@ -132,5 +141,6 @@ nav {
     border-radius: 50px;
     width: 150%;
     height: 35px;
-    background: white;
+    background: #ffe6f9;
+
 }
