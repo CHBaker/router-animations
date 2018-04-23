@@ -4,7 +4,8 @@
 
                 <div class="col input-col">
                     <input
-                        FormControlName="note"
+                        [formControl]="note"
+                        (keyup.enter)="addNote()"
                         type="text"
                         placeholder="new note"
                     >

@@ -7,7 +7,7 @@ import { FormControl, Validators } from '@angular/forms';
     styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-    listForm: FormControl;
+    note: FormControl;
     formReady = false;
     notes = [
         'relax on the sofa',
@@ -15,22 +15,31 @@ export class ListComponent implements OnInit {
         'chill or be chilled'
     ];
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.initListForm();
     }
 
-    initListForm () {
-        this.listForm = new FormControl({
-            note: [null, Validators.required]
-        });
+    initListForm(): void {
+        this.note = new FormControl(
+            '', Validators.required
+        );
         this.formReady = true;
     }
 
-    addNote(note: string) {
-        this.notes.push(note);
+    get newNote() {
+        return this.note.value;
     }
 
-    deleteNote(note: string) {
+    set newNote(note: string) {
+        this.note.setValue(note);
+    }
+
+    addNote(): void {
+        this.notes.unshift(this.newNote);
+        this.note.reset();
+    }
+
+    deleteNote(note: string): void {
         this.notes.filter(currNote => currNote !== note);
     }
 }
