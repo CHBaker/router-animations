@@ -1,9 +1,64 @@
-.block {
-    background: #ffd9fa;
-    float: left;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 5px;
+.cloud-1 {
+    position: absolute;
+    z-index: -1;
+    right: 460px;
+    top: 268px;
 }
 
+.cloud-2 {
+    position: absolute;
+    z-index: -1;
+    right: 838px;
+    top: 400px;
+}
+
+.cloud-3 {
+    position: absolute;
+    z-index: -1;
+    right: 1096px;
+    top: 230px;
+}
+
+.left {
+    position: absolute;
+    left: -47px;
+    top: 0;
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+}
+
+.middle {
+    position: absolute;
+    left: 0;
+    top: -18px;
+    background: white;
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+}
+
+.right {
+    position: absolute;
+    right: -138px;
+    top: 0;
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+}
+
+.home-container {
+    margin-left: 138px;
+}
+
+.title {
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    top: 264px;
+    letter-spacing: 82px;
+    transform: rotate(-90deg);
+    left: -36px;
+}
