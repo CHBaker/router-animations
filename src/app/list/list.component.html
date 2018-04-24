@@ -11,13 +11,26 @@
                 </div>
                 <div class="col-2 submit-col">
                     <button
-                        [disabled]="note.invalid"
                         (click)="addNote()"
+                        (mouseenter)="options()"
+                        (mouseleave)="closeBubble()"
                         type="submit"
                         class="plus"
                     >
-                        +
+                        <div
+                            [class.remove-x]="!clear"
+                            [class.show-x]="clear"
+                        >
+                            +
+                        </div>
                     </button>
+                </div>
+                <div
+                    class="bubble-delete"
+                    [class.fadeBubbleOut]="!clear"
+                    [class.fadeBubbleIn]="clear"
+                >
+                    Clear List
                 </div>
         </div>
         <div class="row list">

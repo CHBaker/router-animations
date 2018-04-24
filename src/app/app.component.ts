@@ -62,11 +62,11 @@ export class AppComponent implements OnInit {
     }
 
     flowToHome() {
+        this.renderer.addClass(this.home.nativeElement, 'flow-home');
+        this.renderer.addClass(this.work.nativeElement, 'flow-out-work');
+
         // wait for contents to come in, then bring in house
         setTimeout(() => {
-            this.renderer.addClass(this.home.nativeElement, 'flow-home');
-            this.renderer.addClass(this.work.nativeElement, 'flow-out-work');
-
             this.renderer.removeClass(this.bar1.nativeElement, 'animate-work-1');
             this.renderer.removeClass(this.bar2.nativeElement, 'animate-work-2');
             this.renderer.addClass(this.bar1.nativeElement, 'animate-home-1');

@@ -59,13 +59,8 @@ export const listAnimations = trigger('listAnimations', [
                                }),
                                style({
                                    opacity: 1,
-                                   transform: 'scale(1.1)',
-                                   offset: 0.4
-                               }),
-                               style({
-                                   opacity: 1,
-                                   transform: 'scale(0.8)',
-                                   offset: 0.6
+                                   transform: 'scale(1.2)',
+                                   offset: 0.1
                                }),
                                style({
                                    opacity: 0,

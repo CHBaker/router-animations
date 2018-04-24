@@ -13,6 +13,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class ListComponent implements OnInit, OnDestroy {
     note: FormControl;
     formReady = false;
+    clear = false;
     notes = [
         'vacuum the cat',
         'relax on the sofa',
@@ -49,10 +50,13 @@ export class ListComponent implements OnInit, OnDestroy {
     }
 
     addNote(): void {
+        console.log(this.note.valid);
         if (this.note.valid) {
             this.notes.unshift(this.newNote);
             this.note.reset();
             this.LocalStorage = this.notes;
+        } else {
+            this.notes.length = 0;
         }
     }
 
@@ -61,7 +65,18 @@ export class ListComponent implements OnInit, OnDestroy {
         this.LocalStorage = this.notes;
     }
 
+    options() {
+        console.log('options ', this.note.invalid)
+        if (this.note.invalid) {
+            this.clear = true;
+        } else {
+            this.clear = false;
+        }
+    }
 
+    closeBubble() {
+        this.clear = false;
+    }
 
     ngOnDestroy() {
         this.LocalStorage = this.notes;
