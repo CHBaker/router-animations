@@ -1,10 +1,14 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { listAnimations } from './list.animations';
+import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.css']
+    styleUrls: ['./list.component.css'],
+    animations: [
+        listAnimations
+    ]
 })
 export class ListComponent implements OnInit, OnDestroy {
     note: FormControl;

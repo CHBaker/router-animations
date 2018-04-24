@@ -21,7 +21,7 @@
                 </div>
         </div>
         <div class="row list">
-            <ul>
+            <ul [@listAnimations]="notes.length">
                 <li
                     *ngFor="let note of notes"
                     (click)="deleteNote(note)"
