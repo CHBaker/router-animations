@@ -61,7 +61,18 @@ input::-webkit-input-placeholder {
 
 .list {
     height: 90%;
-    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background-color: #ceecd9;
+    width: 5px;
+    max-height: 20px;
+    border-radius: 25px;
 }
 
 ul {
@@ -80,4 +91,13 @@ li {
     width: 92%;
     background: #95d7ae7a;
     border-radius: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin-top: 9px;
+    margin-left: -5px;
+    border-radius: 50px;
+    background: white;
 }
