@@ -62,6 +62,7 @@ input::-webkit-input-placeholder {
 .list {
     height: 90%;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .list::-webkit-scrollbar {
@@ -87,17 +88,96 @@ li {
     margin-left: 10px !important;
     margin-bottom: 10px !important;
     padding-bottom: 3px;
+    padding-top: 2px;
     padding-left: 10px;
     width: 92%;
     background: #95d7ae7a;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+@keyframes hideDot {
+    from {
+        transform: scale(1);
+        background: white;
+    }
+    to {
+        transform: scale(0);
+        background: #454751;
+
+    }
+}
+
+@keyframes showDot {
+    0% {
+        transform: scale(0);
+        background: #454751;
+
+    }
+    100% {
+        transform: scale(1);
+        background: white;
+    }
+}
+
+@keyframes showX {
+    from {
+        transform: scale(1) rotate(0deg);
+        color: white;
+    }
+    to {
+        transform: scale(2.5) rotate(-227deg);
+        color: #454751;
+
+    }
+}
+
+@keyframes hideX {
+    0% {
+        transform: scale(2.5) rotate(-227deg);
+        color: #454751;
+
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        color: white;
+    }
+}
+
+li:hover {
+    padding-top: 5px;
+    padding-bottom: 6px;
+    transition: all .2s;
+}
+
+li:hover .dot {
+    animation: hideDot .5s ease forwards;
+}
+
+li:hover .x::after {
+    animation: showX 0.4s forwards;
 }
 
 .dot {
+    animation: showDot .4s ease forwards;
     width: 10px;
     height: 10px;
     margin-top: 9px;
     margin-left: -5px;
     border-radius: 50px;
     background: white;
+}
+
+.x::after {
+    animation: hideX .8s ease forwards;
+    content: '+';
+    position: absolute;
+    top: 2.5px;
+    right: -19px;
+    font-size: 15px;
+    color: white;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -56,6 +56,8 @@ export class ListComponent implements OnInit, OnDestroy {
         this.notes = this.notes.filter(currNote => currNote !== note);
         this.LocalStorage = this.notes;
     }
+
+
 
     ngOnDestroy() {
         this.LocalStorage = this.notes;
