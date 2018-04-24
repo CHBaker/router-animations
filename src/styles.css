@@ -7,4 +7,5 @@ html, body {
 body {
     background: #95D7AE !important;
     color: #454851;
+    overflow: hidden;
 }

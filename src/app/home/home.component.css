@@ -128,7 +128,7 @@
 }
 
 .title {
-    color: #ffd9fa;
+    color: #f5e7f3;
     font-size: 45px;
     position: absolute;
     top: 33%;
@@ -136,4 +136,10 @@
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     left: -1%;
+}
+
+@media only screen and (max-width: 1600px) {
+    .title {
+        left: -13%;
+    }
 }
