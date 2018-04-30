@@ -6,15 +6,14 @@ import { FormControl, Validators } from '@angular/forms';
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.css'],
-    animations: [
-        listAnimations
-    ]
+    animations: [listAnimations]
 })
 export class ListComponent implements OnInit, OnDestroy {
     note: FormControl;
     formReady = false;
     clear = false;
-    notes = [
+    notes: string[];
+    defaultNotes = [
         'vacuum the cat',
         'relax on the sofa',
         'make dinner',
@@ -27,7 +26,9 @@ export class ListComponent implements OnInit, OnDestroy {
     }
 
     checkLocalStorage() {
-        if (this.LocalStorage !== null) {
+        if (this.LocalStorage === null || this.LocalStorage.length === 0) {
+            this.notes = [...this.defaultNotes];
+        } else {
             this.notes = this.LocalStorage;
         }
     }
@@ -50,12 +51,14 @@ export class ListComponent implements OnInit, OnDestroy {
     }
 
     addNote(): void {
-        console.log(this.note.valid);
+        console.log('note info, ', this.note.valid, this.notes.length);
         if (this.note.valid) {
             this.notes.unshift(this.newNote);
             this.note.reset();
             this.LocalStorage = this.notes;
-        } else {
+        } else if (this.note.invalid && this.notes.length === 0) {
+            this.notes = [...this.defaultNotes];
+        } else if (this.note.invalid) {
             this.notes.length = 0;
         }
     }
@@ -66,7 +69,7 @@ export class ListComponent implements OnInit, OnDestroy {
     }
 
     options() {
-        console.log('options ', this.note.invalid)
+        console.log('options ', this.note.invalid);
         if (this.note.invalid) {
             this.clear = true;
         } else {
