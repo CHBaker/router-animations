@@ -12,6 +12,9 @@ export class ListComponent implements OnInit, OnDestroy {
     note: FormControl;
     formReady = false;
     clear = false;
+    default = false;
+    defaultSpin = false;
+
     notes: string[];
     defaultNotes = [
         'vacuum the cat',
@@ -70,15 +73,19 @@ export class ListComponent implements OnInit, OnDestroy {
 
     options() {
         console.log('options ', this.note.invalid);
-        if (this.note.invalid) {
+        if (this.note.invalid && this.notes.length === 0) {
+            this.default = true;
+        } else if (this.note.invalid) {
             this.clear = true;
         } else {
             this.clear = false;
+            this.default = false;
         }
     }
 
     closeBubble() {
         this.clear = false;
+        this.default = false;
     }
 
     ngOnDestroy() {

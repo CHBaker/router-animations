@@ -86,6 +86,38 @@
     animation: spinBackX .7s ease-in forwards;
 }
 
+@keyframes spinDefault {
+    from {
+        transform: rotate(0deg);
+        color: white !important;
+    }
+    to {
+        transform: rotate(180deg);
+        color: white !important;
+    }
+}
+
+@keyframes spinDefaultBack {
+    0% {
+        transform: rotate(180deg);
+        color: white !important;
+    }
+    100% {
+        transform: rotate(0deg);
+        color: white !important;
+    }
+}
+
+.spinDefault {
+    animation: spinDefault .5s ease-out forwards;
+    color: white !important;
+}
+
+.spinDefaultBack {
+    animation: spinDefaultBack .7s ease-in forwards;
+    color: white !important;
+}
+
 @keyframes fadeBubbleIn {
     from {
         opacity: 0;
@@ -114,6 +146,11 @@
 
 .fadeBubbleOut {
     animation: fadeBubbleOut .3s ease-in forwards;
+}
+
+.bubble-default {
+    padding-top: 3px !important;
+    padding-left: 22px !important;
 }
 
 .bubble-delete {

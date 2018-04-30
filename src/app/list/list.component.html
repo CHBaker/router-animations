@@ -18,8 +18,10 @@
                         class="plus"
                     >
                         <div
-                            [class.remove-x]="!clear"
-                            [class.show-x]="clear"
+                            [class.remove-x]="!clear && !default"
+                            [class.show-x]="clear && !default"
+                            [class.spinDefaultBack]="!default && !clear && notes.length === 0"
+                            [class.spinDefault]="default && !clear"
                         >
                             +
                         </div>
@@ -27,10 +29,12 @@
                 </div>
                 <div
                     class="bubble-delete"
-                    [class.fadeBubbleOut]="!clear"
-                    [class.fadeBubbleIn]="clear"
+                    [class.fadeBubbleOut]="!clear && !default"
+                    [class.fadeBubbleIn]="clear || default"
+                    [class.bubble-default]="default"
                 >
-                    Clear List
+                    <span *ngIf="clear">Clear List</span>
+                    <span *ngIf="default">Add Default Notes</span>
                 </div>
         </div>
         <div class="row list">
