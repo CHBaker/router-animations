@@ -61,8 +61,10 @@ export class ListComponent implements OnInit, OnDestroy {
             this.LocalStorage = this.notes;
         } else if (this.note.invalid && this.notes.length === 0) {
             this.notes = [...this.defaultNotes];
+            this.LocalStorage = this.notes;
         } else if (this.note.invalid) {
             this.notes.length = 0;
+            this.LocalStorage = this.notes;
         }
     }
 

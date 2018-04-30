@@ -1,1 +1,73 @@
 
+.desk-row {
+    margin-top: 35%;
+}
+
+.desk {
+    background: #454751;
+    width: 100%;
+    height: 80px;
+    border-radius: 3px;
+}
+
+/* leg */
+.desk::before {
+    content: '';
+    background: #454751;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+/* leg */
+.desk::after {
+    content: '';
+    background: #454751;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+.lamp {
+    background: #454751;
+    position: absolute;
+    left: -150px;
+    bottom: -70px;
+    width: 15px;
+    height: 420px;
+    border-radius: 3px;
+}
+
+/* lamp base */
+.lamp::before {
+    content: '';
+    background: #454751;
+    position: absolute;
+    bottom: 0;
+    left: -42px;
+    width: 100px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+/* lamp head */
+.lamp::after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 54px solid #454751;
+    transform: rotate(20deg);
+}
+
+.lamp-light {}
