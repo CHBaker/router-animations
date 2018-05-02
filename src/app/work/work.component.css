@@ -1,3 +1,26 @@
+@keyframes animateTitle {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.work-title {
+    animation: animateTitle 1s ease-out 2.5s forwards;
+    opacity: 0;
+    transform: translateY(150px);
+    padding-left: 30%;
+    margin-top: 10%;
+    font-size: 80px;
+    letter-spacing: 175px;
+    width: 100%;
+    text-align: center;
+    color: #f5e7f3;
+}
+
 .desk-row {
     margin-top: 45%;
 }
@@ -84,7 +107,7 @@
 }
 
 .lamp-light {
-    animation: turnLightOn 0s 2.5s forwards;
+    animation: turnLightOn 0s 3.5s forwards;
     visibility: hidden;
     position: absolute;
     top: 206px;
@@ -118,7 +141,7 @@
         left: 850px;
     }
     100% {
-        left: 198px
+        left: 198px;
     }
 }
 
@@ -230,11 +253,11 @@
     5% {
         visibility: visible;
     }
-    65% {
+    70% {
         transform: translateY(0px);
     }
     85% {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
@@ -243,7 +266,7 @@
 }
 
 .books {
-    animation: bookFall1 .3s ease-in 2.5s forwards;
+    animation: bookFall1 0.3s ease-in 2.5s forwards;
     transform: translateY(-35px);
     visibility: hidden;
     position: absolute;
@@ -256,9 +279,7 @@
 }
 
 .books::before {
-    animation: bookFall2 .3s ease-in-out 1.5s forwards;
-    transform: translateY(-40px);
-    visibility: hidden;
+    animation: bookFall2 0.3s ease-in-out 1.5s forwards;
     content: '';
     position: absolute;
     bottom: 15px;
@@ -270,9 +291,7 @@
 }
 
 .books::after {
-    animation: bookFall3 .4s ease-in-out 1.5s forwards;
-    transform: translateY(-50px);
-    visibility: hidden;
+    animation: bookFall3 0.35s ease-in-out 1.6s forwards;
     content: '';
     position: absolute;
     bottom: 30px;
@@ -281,4 +300,106 @@
     height: 15px;
     background: #73956e;
     border-radius: 3px;
+}
+
+@keyframes bounceCup {
+    0% {
+        transform: translateY(-15px);
+        visibility: hidden;
+    }
+    5% {
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+.coffee-cup {
+    animation: bounceCup 0.1s ease-in 2s forwards;
+    transform: translateY(-15px);
+    visibility: hidden;
+    position: absolute;
+    z-index: 3;
+    right: 75px;
+    bottom: 80px;
+    width: 25px;
+    height: 28px;
+    background: #73956e;
+    border-radius: 3px;
+}
+
+.coffee-handle {
+    animation: bounceCup 0.1s ease-in 2s forwards;
+    transform: translateY(-15px);
+    visibility: hidden;
+    position: absolute;
+    z-index: 0;
+    right: 65px;
+    bottom: 83px;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #73956e;
+    border-radius: 50%;
+}
+
+@keyframes splash1 {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes splash2 {
+    0% {
+        transform: translateY(0px);
+        height: 8px;
+    }
+    50% {
+        transform: translateY(-12px);
+        height: 5px;
+    }
+    55% {
+        height: 5px;
+    }
+    100% {
+        transform: translateY(0px);
+        height: 8px;
+    }
+}
+
+/* splash 1 */
+
+.coffee-handle::before {
+    animation: splash1 0.2s ease-out 1.1s;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -4px;
+    left: -14px;
+    width: 15px;
+    height: 10px;
+    border-radius: 50%;
+    background: #454751;
+}
+
+/* splash 2 */
+
+.coffee-handle::after {
+    animation: splash2 0.4s ease-out 1.1s;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -4px;
+    right: 14px;
+    width: 5px;
+    height: 8px;
+    border-radius: 50%;
+    background: #454751;
 }
