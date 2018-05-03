@@ -449,6 +449,7 @@
     position: absolute;
     bottom: 325%;
     left: -103%;
+    min-width: 260px;
     background: #454751;
     color: #f4e6f2;
     letter-spacing: 11px;
