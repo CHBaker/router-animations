@@ -1,6 +1,17 @@
 <div class="container">
     <div class="row desk-row">
         <div class="col-3">
+            <div class="date">
+                <div class="div month">
+                    {{ month }}
+                </div>
+                <div class="day">
+                    {{ day }}
+                </div>
+            </div>
+            <div class="clock">
+                {{ time }}
+            </div>
             <div class="light-switch" (click)="turnLight()">
                 <div
                     class="button"
