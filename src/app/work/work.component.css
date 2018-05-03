@@ -106,8 +106,20 @@
     }
 }
 
-.lamp-light {
+.lamp-off {
+    display: none;
+}
+
+.lamp-on {
+    display: block;
+    visibility: visible !important;
+}
+
+.animate-light {
     animation: turnLightOn 0s 3.5s forwards;
+}
+
+.lamp-light {
     visibility: hidden;
     position: absolute;
     top: 206px;
@@ -122,17 +134,16 @@
     border-top: 373px solid #ffffc447;
 }
 
-.lamp-light::before {
-    content: '';
-    visibility: visible;
+.lamp-swivel {
     position: absolute;
-    bottom: 355px;
-    left: -216px;
+    top: -6px;
+    left: -2px;
     z-index: 6;
     background: #454751;
     width: 30px;
     height: 25px;
-    transform: rotate(9deg);
+    -webkit-transform: rotate(31deg);
+    transform: rotate(31deg);
     border-radius: 3px;
 }
 
@@ -402,4 +413,34 @@
     height: 8px;
     border-radius: 50%;
     background: #454751;
+}
+
+.light-switch {
+    position: absolute;
+    top: -150px;
+    width: 30px;
+    height: 50px;
+    border-radius: 3px;
+    border: 8px solid #454751;
+    background: #7bae7f;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.light-switch:hover {
+    box-shadow: 0px 0px 20px 5px #73956e;
+    transition: all .2s ease;
+}
+
+.button {
+    position: absolute;
+    width: 14px;
+    left: 0px;
+    top: 17px;
+    height: 17px;
+    background: #73956f;
+}
+
+.button-on {
+    top: 0px;
 }

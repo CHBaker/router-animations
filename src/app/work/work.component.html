@@ -1,10 +1,18 @@
 <div class="container">
     <div class="row desk-row">
-        <div class="col-3"></div>
+        <div class="col-3">
+            <div class="light-switch" (click)="turnLight()">
+                <div
+                    class="button"
+                    [class.button-on]="buttonOn"
+                ></div>
+            </div>
+        </div>
         <div class="col">
             <div class="desk">
                 <div class="lamp">
-                    <div class="lamp-light"></div>
+                    <div class="lamp-swivel"></div>
+                    <div class="lamp-light" #lampLight></div>
                 </div>
                 <div class="chair">
                     <div class="wheels"></div>
