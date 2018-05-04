@@ -20,10 +20,7 @@ import { ListComponent } from './list/list.component';
         ReactiveFormsModule,
         RouterModule,
         AppRoutingModule,
-        AngularFireLite.forRoot(environment.config),
-        BrowserModule.withServerTransition({
-            appId: 'angularfire-lite-project'
-        })
+        BrowserModule
     ],
     providers: [],
     bootstrap: [AppComponent]
