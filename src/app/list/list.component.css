@@ -269,7 +269,7 @@ li {
     padding-top: 2px;
     padding-left: 10px;
     width: 92%;
-    background: #95d7ae7a;
+    background: #95d7ae7a !important;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease;

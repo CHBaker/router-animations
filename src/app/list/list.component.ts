@@ -53,8 +53,10 @@ export class ListComponent implements OnInit, OnDestroy {
         return this.note.value;
     }
 
-    addNote(): void {
-        console.log('note info, ', this.note.valid, this.notes.length);
+    addNote(exception: string): void {
+        if (exception === 'exception' && this.note.invalid) {
+            return;
+        }
         if (this.note.valid) {
             this.notes.unshift(this.newNote);
             this.note.reset();

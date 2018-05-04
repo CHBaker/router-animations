@@ -25,18 +25,16 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.routerSub = this.router.events.subscribe((e) => {
             if (e instanceof NavigationEnd) {
-                if (e.url.split('/').indexOf('home') !== -1) {
-                    console.log(e.url.split('/'));
-                    this.renderer.addClass(this.bar1.nativeElement, 'starting-home-1');
-                    this.renderer.addClass(this.bar2.nativeElement, 'starting-home-2');
-
-                    this.renderer.addClass(this.house.nativeElement, 'house-home-state');
-                } else {
-                    console.log(e.url.split('/'));
+                if (e.url.split('/').indexOf('work') !== -1) {
                     this.renderer.addClass(this.bar1.nativeElement, 'starting-work-1');
                     this.renderer.addClass(this.bar2.nativeElement, 'starting-work-2');
 
                     this.renderer.addClass(this.house.nativeElement, 'house-work-state');
+                } else {
+                    this.renderer.addClass(this.bar1.nativeElement, 'starting-home-1');
+                    this.renderer.addClass(this.bar2.nativeElement, 'starting-home-2');
+
+                    this.renderer.addClass(this.house.nativeElement, 'house-home-state');
                 }
             }
         });
