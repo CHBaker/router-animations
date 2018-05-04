@@ -131,7 +131,7 @@
     transform: rotate(20deg);
     border-left: 165px solid transparent;
     border-right: 1020px solid transparent;
-    border-top: 373px solid #ffffc447;
+    border-top: 373px solid #ffffc447 !important;
 }
 
 .lamp-swivel {
