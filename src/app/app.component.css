@@ -355,6 +355,7 @@ nav {
 }
 
 .tree {
+    display: block;
     position: absolute;
     bottom: 0;
     left: -250px;
@@ -367,6 +368,7 @@ nav {
 }
 
 .tree-top {
+    display: block;
     position: absolute;
     top: -51px;
     left: -8px;
@@ -442,4 +444,38 @@ nav {
     transform: rotate(30deg);
     bottom: 550px;
     right: -45%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .pill {
+        margin-top: 3.5%;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    .pill {
+        margin-top: 42px;
+    }
+}
+
+@media only screen and (max-width: 1203px) {
+    .tree, .tree-top {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .title {
+        font-size: 75px;
+        margin-top: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .title {
+            font-size: 75px;
+            position: absolute;
+            top: 0;
+            left: -75%;
+    }
+
 }

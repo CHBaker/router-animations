@@ -368,3 +368,24 @@ li:hover .x::after {
     font-size: 22px;
     font-size: 1.3vw;
 }
+
+@media only screen and (max-width: 1500px) {
+    .dot {
+        margin-top: 9px;
+    }
+}
+
+@media only screen and (max-width: 1248px) {
+    .list-container {
+        margin-left: 4%;
+    }
+
+    .dot {
+        margin-top: 7px;
+    }
+
+    .x::after {
+        top: 20%;
+        right: -6.4%;
+    }
+}

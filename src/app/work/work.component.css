@@ -504,3 +504,11 @@
 .month {
     padding-bottom: 20%;
 }
+
+@media only screen and (max-width: 1500px) {
+    .desk-row {
+        margin-top: 30%;
+        margin-left: 4%;
+        transform: scale(0.7);
+    }
+}
