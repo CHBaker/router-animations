@@ -448,15 +448,17 @@
 .clock {
     position: absolute;
     bottom: 325%;
-    left: -103%;
-    min-width: 260px;
-    min-height: 100px;
+    left: -115%;
+    text-align: center;
+    width: 132%;
+    min-height: 100%;
     background: #454751;
     color: #f4e6f2;
     letter-spacing: 11px;
     padding: 9%;
     border-radius: 10px;
     border: 5px solid #73956e;
+    font-size: 28px;
     font-size: 1.5vw;
 }
 
@@ -466,7 +468,9 @@
     left: -70%;
     padding: 12% 0% 12% 3%;
     color: #f4e6f2;
+    font-size: 19px;
     font-size: 1vw;
+    font-weight: 600;
     letter-spacing: 9px;
     background: #7bae7f;
     text-align: center;

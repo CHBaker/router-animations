@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Poiret+One|Pompiere');
+
 html, body {
     width: 100%;
     height: 100%;
@@ -8,4 +9,6 @@ body {
     background: #95D7AE !important;
     color: #454851;
     overflow: hidden;
+    font-family: 'Poiret One',
+    cursive !important;
 }

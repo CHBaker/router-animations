@@ -24,14 +24,16 @@
     width: 100%;
     height: 45px;
     border: none;
+    padding-left: 20%;
     border-top-right-radius: 3px;
     background: #73956e;
     color: white;
-    font-size: 39px;
+    font-size: 51px;
     cursor: pointer;
     line-height: 1;
     outline: none;
     transition: all 0.7s ease;
+    transform-origin: center;
 }
 
 .plus:focus {
@@ -39,20 +41,27 @@
 }
 
 .plus:hover {
-    background: #95D7AE;
+    background: #95d7ae;
     transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.plus-char {
+    height: 108%;
+    width: 86%;
 }
 
 @keyframes spinX {
-    from  {
+    from {
+        transform-origin: center;
         transform: rotate(0deg);
         color: white;
         text-shadow: none;
         -webkit-text-stroke-width: 0;
         -webkit-text-stroke-color: none;
-
     }
     to {
+        transform-origin: center;
         transform: rotate(134deg);
         color: red;
         text-shadow: 0px 0px 20px white;
@@ -63,6 +72,7 @@
 
 @keyframes spinBackX {
     0% {
+        transform-origin: center;
         transform: rotate(134deg);
         color: red;
         text-shadow: 0px 0px 20px white;
@@ -70,6 +80,7 @@
         -webkit-text-stroke-color: none;
     }
     100% {
+        transform-origin: center;
         transform: rotate(0deg);
         color: white;
         text-shadow: none;
@@ -79,19 +90,23 @@
 }
 
 .show-x {
-    animation: spinX .5s ease-out forwards;
+    transform-origin: center;
+    animation: spinX 0.5s ease-out forwards;
 }
 
 .remove-x {
-    animation: spinBackX .7s ease-in forwards;
+    transform-origin: center;
+    animation: spinBackX 0.7s ease-in forwards;
 }
 
 @keyframes spinDefault {
     from {
+        transform-origin: center;
         transform: rotate(0deg);
         color: white !important;
     }
     to {
+        transform-origin: center;
         transform: rotate(180deg);
         color: white !important;
     }
@@ -99,22 +114,26 @@
 
 @keyframes spinDefaultBack {
     0% {
+        transform-origin: center;
         transform: rotate(180deg);
         color: white !important;
     }
     100% {
+        transform-origin: center;
         transform: rotate(0deg);
         color: white !important;
     }
 }
 
 .spinDefault {
-    animation: spinDefault .5s ease-out forwards;
+    transform-origin: center;
+    animation: spinDefault 0.5s ease-out forwards;
     color: white !important;
 }
 
 .spinDefaultBack {
-    animation: spinDefaultBack .7s ease-in forwards;
+    transform-origin: center;
+    animation: spinDefaultBack 0.7s ease-in forwards;
     color: white !important;
 }
 
@@ -132,20 +151,20 @@
 @keyframes fadeBubbleOut {
     0% {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0);
     }
     100% {
         opacity: 0;
-        transform: translateY(20px)
+        transform: translateY(20px);
     }
 }
 
 .fadeBubbleIn {
-    animation: fadeBubbleIn .3s ease-out forwards;
+    animation: fadeBubbleIn 0.3s ease-out forwards;
 }
 
 .fadeBubbleOut {
-    animation: fadeBubbleOut .3s ease-in forwards;
+    animation: fadeBubbleOut 0.3s ease-in forwards;
 }
 
 .bubble-default {
@@ -159,6 +178,9 @@
     right: 51%;
     padding-top: 25px;
     padding-left: 8px;
+    font-size: .9vw;
+    font-weight: 600;
+    width: 88px;
     width: 88px;
     height: 75px;
     border-radius: 100px;
@@ -176,7 +198,6 @@
     border-radius: 100px;
     background: white;
 }
-
 
 .bubble-delete::after {
     content: '';
@@ -282,20 +303,22 @@ li {
         color: white;
     }
     to {
-        transform: scale(2.5) rotate(-227deg);
+        transform: scale(3) rotate(-225deg);
         color: #454751;
     }
 }
 
 @keyframes hideX {
     0% {
-        transform: scale(2.5) rotate(-227deg);
+        transform-origin: center;
+        transform: scale(2.5) rotate(-225deg);
         color: #454751;
     }
     50% {
         color: white;
     }
     100% {
+        transform-origin: center;
         transform: scale(1) rotate(0deg);
         color: white;
     }
@@ -304,6 +327,7 @@ li {
 li:hover {
     padding-top: 5px;
     padding-bottom: 6px;
+    padding-left: 19%;
     transition: all 0.2s;
 }
 
@@ -312,6 +336,7 @@ li:hover .dot {
 }
 
 li:hover .x::after {
+    transform-origin: center;
     animation: showX 0.4s forwards;
 }
 
@@ -319,18 +344,27 @@ li:hover .x::after {
     animation: showDot 0.4s ease forwards;
     width: 10px;
     height: 10px;
-    margin-top: 9px;
+    margin-top: 13px;
     margin-left: -5px;
     border-radius: 50px;
     background: white;
 }
 
 .x::after {
+    font-weight: normal !important;
     animation: hideX 0.8s ease forwards;
     content: '+';
     position: absolute;
-    top: 2.5px;
-    right: -19px;
+    top: 12.8%;
+    right: -5.8%;
     font-size: 15px;
+    font-size: 0.8vw;
     color: white;
+    transform-origin: center;
+}
+
+.x {
+    font-weight: bold;
+    font-size: 22px;
+    font-size: 1.3vw;
 }
