@@ -42,6 +42,8 @@ export class AppComponent implements OnInit {
     }
 
     getState(outlet) {
+        console.log(outlet);
+        console.log(outlet.activatedRouteData.state);
         return outlet.activatedRouteData.state;
     }
 

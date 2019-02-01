@@ -288,10 +288,12 @@ li {
 
 @keyframes showDot {
     0% {
+        transform-origin: center;
         transform: scale(0);
         background: #454751;
     }
     100% {
+        transform-origin: center;
         transform: scale(1);
         background: white;
     }
@@ -299,10 +301,12 @@ li {
 
 @keyframes showX {
     from {
+        transform-origin: center;
         transform: scale(1) rotate(0deg);
         color: white;
     }
     to {
+        transform-origin: center;
         transform: scale(3) rotate(-225deg);
         color: #454751;
     }
@@ -341,6 +345,7 @@ li:hover .x::after {
 }
 
 .dot {
+    transform-origin: center;
     animation: showDot 0.4s ease forwards;
     width: 10px;
     height: 10px;
@@ -375,7 +380,7 @@ li:hover .x::after {
     }
 }
 
-@media only screen and (max-width: 1248px) {
+@media only screen and (max-width: 1290px) {
     .list-container {
         margin-left: 4%;
     }
